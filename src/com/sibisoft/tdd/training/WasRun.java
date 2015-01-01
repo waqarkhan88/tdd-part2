@@ -22,12 +22,15 @@ public class WasRun extends TestCase {
 		this.log = "setUp ";
 	}
 	
+	public void tearDown() {
+		this.log += "tearDown ";
+	}
+	
 	public void testMethod() {
 		this.log += "testMethod ";
 	}
 	
-	public void tearDown() {
-		this.log += "tearDown ";
+	public void testBrokenMethod() throws Exception {
+		throw new Exception("Blow It Out!!!");
 	}
-
 }

@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 public class TestCase {
 	
 	protected String name;
+	protected TestResult result;
 	
 	public TestCase(String testMethodName) {
 		this.name = testMethodName;
@@ -18,8 +19,9 @@ public class TestCase {
 		
 	}
 	
-	public void run(/*Object result*/) throws Exception {
-		//result.testStarted();
+	public TestResult run() throws Exception {
+		result = new TestResult();
+		result.testStarted();
 		setUp();
 		Method method = this.getClass().getDeclaredMethod(this.name);
 		if(method != null) {
@@ -27,5 +29,6 @@ public class TestCase {
 			method.invoke(this);
 		}
 		tearDown();
+		return result;
 	}
 }
