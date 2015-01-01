@@ -19,6 +19,7 @@ public class WasRun extends TestCase {
 	}
 	
 	public void setUp() {
+		this.wasRun = false;
 		this.wasSetUp = true;
 	}
 	
