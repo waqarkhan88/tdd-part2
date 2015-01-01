@@ -19,8 +19,7 @@ public class TestCase {
 		
 	}
 	
-	public TestResult run() throws Exception {
-		result = new TestResult();
+	public void run(TestResult result) throws Exception {
 		result.testStarted();
 		setUp();
 		try {
@@ -30,6 +29,5 @@ public class TestCase {
 			result.testFailed();
 		}
 		tearDown();
-		return result;
 	}
 }
