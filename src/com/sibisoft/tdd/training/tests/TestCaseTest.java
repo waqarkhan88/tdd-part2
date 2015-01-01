@@ -9,11 +9,11 @@ public class TestCaseTest extends TestCase {
 		super(testMethodName);
 	}
 	
-	public void testRunning() {
+	public void testRunning() throws Exception {
 //		System.out.println("testRunning()");
 		WasRun test = new WasRun("testMethod");
 //		System.out.println("test.wasRun()="+test.wasRun());
-		assert test.wasRun(); // TODO: assert not working with methods invoked through reflection
+		assert !test.wasRun();
 		test.run();
 		assert test.wasRun();
 	}
