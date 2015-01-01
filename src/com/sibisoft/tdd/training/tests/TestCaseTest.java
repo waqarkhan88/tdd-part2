@@ -1,6 +1,7 @@
 package com.sibisoft.tdd.training.tests;
 
 import com.sibisoft.tdd.training.TestCase;
+import com.sibisoft.tdd.training.TestResult;
 import com.sibisoft.tdd.training.WasRun;
 
 public class TestCaseTest extends TestCase {
@@ -31,6 +32,13 @@ public class TestCaseTest extends TestCase {
 	public void testFailedResult() throws Exception {
 		test = new WasRun("testBrokenMethod");
 		test.run();
+		assert result.summary().equals("1 run, 1 failed");
+	}
+	
+	public void testFailedResultFormatting() {
+		result = new TestResult();
+		result.testStarted();
+		result.testFailed();
 		assert result.summary().equals("1 run, 1 failed");
 	}
 }
