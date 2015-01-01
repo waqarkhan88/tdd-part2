@@ -10,7 +10,12 @@ public class TestCase {
 		this.name = testMethodName;
 	}
 	
+	public void setUp() {
+		
+	}
+	
 	public void run() throws Exception {
+		setUp();
 		Method method = this.getClass().getDeclaredMethod(this.name);
 		if(method != null) {
 			method.setAccessible(true);

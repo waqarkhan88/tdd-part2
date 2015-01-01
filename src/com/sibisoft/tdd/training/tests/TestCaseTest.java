@@ -17,4 +17,10 @@ public class TestCaseTest extends TestCase {
 		test.run();
 		assert test.wasRun();
 	}
+	
+	public void testSetUp() throws Exception {
+		WasRun test = new WasRun("testMethod");
+		test.run();
+		assert test.wasSetUp();
+	}
 }

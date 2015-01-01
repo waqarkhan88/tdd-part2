@@ -3,6 +3,7 @@ package com.sibisoft.tdd.training;
 public class WasRun extends TestCase {
 	
 	private boolean wasRun;
+	private boolean wasSetUp;
 	
 	public WasRun(String testMethodName) {
 		super(testMethodName);
@@ -11,6 +12,14 @@ public class WasRun extends TestCase {
 	
 	public boolean wasRun() {
 		return this.wasRun;
+	}
+	
+	public boolean wasSetUp() {
+		return this.wasSetUp;
+	}
+	
+	public void setUp() {
+		this.wasSetUp = true;
 	}
 	
 	public void testMethod() {
