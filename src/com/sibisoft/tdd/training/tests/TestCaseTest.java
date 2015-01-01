@@ -13,16 +13,12 @@ public class TestCaseTest extends TestCase {
 	
 	@Override
 	public void setUp() {
+		
+	}
+	
+	public void testTemplateMethod() throws Exception {
 		test = new WasRun("testMethod");
-	}
-	
-	public void testRunning() throws Exception {
 		test.run();
-		assert test.wasRun();
-	}
-	
-	public void testSetUp() throws Exception {
-		test.run();
-		assert test.wasSetUp();
+		assert test.log().equals("setUp testMethod tearDown ");
 	}
 }

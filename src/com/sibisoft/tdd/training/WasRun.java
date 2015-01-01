@@ -3,7 +3,7 @@ package com.sibisoft.tdd.training;
 public class WasRun extends TestCase {
 	
 	private boolean wasRun;
-	private boolean wasSetUp;
+	private String log;
 	
 	public WasRun(String testMethodName) {
 		super(testMethodName);
@@ -14,17 +14,20 @@ public class WasRun extends TestCase {
 		return this.wasRun;
 	}
 	
-	public boolean wasSetUp() {
-		return this.wasSetUp;
+	public String log() {
+		return this.log;
 	}
 	
 	public void setUp() {
-		this.wasRun = false;
-		this.wasSetUp = true;
+		this.log = "setUp ";
 	}
 	
 	public void testMethod() {
-		this.wasRun = true;
+		this.log += "testMethod ";
+	}
+	
+	public void tearDown() {
+		this.log += "tearDown ";
 	}
 
 }
